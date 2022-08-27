@@ -1,0 +1,8 @@
+(library
+ (name libhelang))
+
+(menhir
+ (modules parser))
+
+(ocamllex lexer)
+
