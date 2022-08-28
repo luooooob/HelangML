@@ -19,12 +19,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Use OCaml 4.13.x
+      - name: Use setup-ocaml
         uses: ocaml/setup-ocaml@v2
-        with:
-          ocaml-compiler: 4.13.x
 
-      - run: opam install ounit2
+      - run: opam install menhir ounit2
 
       - run: opam exec -- dune build
 
