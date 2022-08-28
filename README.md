@@ -1,5 +1,7 @@
 <h1 align="center">
   <img width="300" src="logo.svg" alt="Logo">
+  <img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/luooooob/helangml/Main%20workflow?style=for-the-badge">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/luooooob/helangml?label=OCaml&style=for-the-badge">
 </h1>
 
 ## 介绍
