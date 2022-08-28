@@ -10,19 +10,19 @@ let id = letter+
 
 rule read = 
   parse
-  | white { read lexbuf }
-  | ";" { SEMI }
-  | '|' { VBAR }
-  | "u8" { U8 }
-  | "*" { TIMES }
-  | "+" { PLUS }
-  | "-" { MINUS }
-  | "(" { LPAREN }
-  | ")" { RPAREN }
-  | '[' { LSQB }
-  | ']' { RSQB }
-  | "=" { EQUALS }
-  | "print" {PRINT}
-  | id { ID (Lexing.lexeme lexbuf) }
-  | int { INT (int_of_string (Lexing.lexeme lexbuf)) }
-  | eof { EOF }
+  | white      { read lexbuf }
+  | ";"        { SEMI }
+  | '|'        { VBAR }
+  | "u8"       { U8 }
+  | "*"        { TIMES }
+  | "+"        { PLUS }
+  | "-"        { MINUS }
+  | "("        { LPAREN }
+  | ")"        { RPAREN }
+  | '['        { LSQB }
+  | ']'        { RSQB }
+  | "="        { EQUALS }
+  | "print"    { PRINT}
+  | id         { ID (Lexing.lexeme lexbuf) }
+  | int        { INT (int_of_string (Lexing.lexeme lexbuf)) }
+  | eof        { EOF }

@@ -24,15 +24,14 @@ let string_of_he_value = function
   | HLV_Unit(_) -> "<Nil>"
 
 let string_of_ast_type = function 
-| Num(_) -> "num"
-| Arr(_) -> "arr"
-| Var(_) -> "var"
-| Binop(_, _, _) -> "binop"
-| U8 (_, _) -> "u8"
-| Print(_) -> "print"
-| Mut(_, _) -> "mut"
-| MutA(_,_,_) -> "mutA"
-(* open Ast *)
+  | Num(_) -> "num"
+  | Arr(_) -> "arr"
+  | Var(_) -> "var"
+  | Binop(_, _, _) -> "binop"
+  | U8 (_, _) -> "u8"
+  | Print(_) -> "print"
+  | Mut(_, _) -> "mut"
+  | MutA(_,_,_) -> "mutA"
 
 let eval_expr env e = 
   let calc  = function

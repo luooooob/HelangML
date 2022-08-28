@@ -37,22 +37,22 @@ main:
   | EOF                            { [] }
 
 seq: 
-  |expr SEMI seq                   { $1 :: $3 }
+  | expr SEMI seq                   { $1 :: $3 }
   | expr SEMI                      { [$1] }
 
 expr:
-	| ID                             { Var($1) }
-	| INT                            { Num($1) }
-	| arr                            { Arr(List.rev $1) }
-	| expr MINUS expr                { Binop (Minus, $1, $3) } 
-	| expr PLUS expr                 { Binop (Add, $1, $3) }
-	| expr TIMES expr                { Binop (Mult, $1, $3) } 
-	| ID EQUALS expr                 { Mut($1, $3) }
-	| ID LSQB expr RSQB EQUALS expr  { MutA($1, $3, $6) }
-	| U8 ID EQUALS expr              { U8($2, $4) }
-	| PRINT expr                     { Print($2) }
-	| LPAREN expr RPAREN             { $2 }
+  | ID                             { Var($1) }
+  | INT                            { Num($1) }
+  | arr                            { Arr(List.rev $1) }
+  | expr MINUS expr                { Binop (Minus, $1, $3) } 
+  | expr PLUS expr                 { Binop (Add, $1, $3) }
+  | expr TIMES expr                { Binop (Mult, $1, $3) } 
+  | ID EQUALS expr                 { Mut($1, $3) }
+  | ID LSQB expr RSQB EQUALS expr  { MutA($1, $3, $6) }
+  | U8 ID EQUALS expr              { U8($2, $4) }
+  | PRINT expr                     { Print($2) }
+  | LPAREN expr RPAREN             { $2 }
 
 arr:
   | INT VBAR INT                   { $3::[$1] }
-	| arr VBAR INT                   { $3::$1 }
+  | arr VBAR INT                   { $3::$1 }
